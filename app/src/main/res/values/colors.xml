@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="emerald">#23CE6B</color>
+    <color name="grey">#272D2D</color>
+    <color name="ghost_white">#F6F8FF</color>
+    <color name="light_grey">#50514F</color>
+    <color name="disabled_grey">#e8e8e8</color>
+    <color name="purple">#A846A0</color>
+    <color name="disabled_purple">#923f8b</color>
+</resources>

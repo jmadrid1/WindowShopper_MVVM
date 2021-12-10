@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <FrameLayout
+        android:id="@+id/fragment_cart_frame_header"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/payment_square_with_stroke"
+        android:elevation="6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/fragment_details_imageview_back"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_gravity="center|left"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="RtlHardcoded" />
+
+        <ImageView
+            android:id="@+id/fragment_details_imageview_cart"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_marginRight="17dp"
+            android:layout_gravity="center|right"
+            android:src="@drawable/ic_cart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="RtlHardcoded" />
+
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/fragment_details_imageview_picture"
+        android:layout_width="0dp"
+        android:layout_height="340dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_placeholder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_cart_frame_header" />
+
+    <FrameLayout
+        android:id="@+id/fragment_details_frame_price"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/fragment_details_imageview_picture"
+        app:layout_constraintEnd_toEndOf="@+id/fragment_details_imageview_picture">
+
+        <TextView
+            android:id="@+id/fragment_details_textview_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="2dp"
+            android:fontFamily="@font/playfairdisplay_regular"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/fragment_details_textview_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:text="Brown Leather Jacket"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/playfairdisplay_regular"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_details_imageview_picture" />
+
+    <TextView
+        android:id="@+id/fragment_details_textview_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
+        android:text="Casual brown leather jacket designed for a slim fit."
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:fontFamily="@font/playfairdisplay_regular"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_details_textview_title" />
+
+    <TextView
+        android:id="@+id/fragment_details_textview_sizes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="25dp"
+        android:text="Size"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_details_textview_description" />
+
+    <RadioGroup
+        android:id="@+id/fragment_details_radio_group_sizes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="18dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toEndOf="@+id/fragment_details_textview_sizes"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_details_textview_description">
+
+        <RadioButton
+            android:id="@+id/fragment_details_radio_small"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@drawable/radio_button_states"
+            android:button="@android:color/transparent"
+            android:gravity="center"
+            android:text="S"
+            android:textColor="@drawable/radio_button_text_colors"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/fragment_details_radio_medium"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/radio_button_states"
+            android:button="@android:color/transparent"
+            android:gravity="center"
+            android:text="M"
+            android:textColor="@drawable/radio_button_text_colors"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/fragment_details_radio_large"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/radio_button_states"
+            android:button="@android:color/transparent"
+            android:gravity="center"
+            android:text="L"
+            android:textColor="@drawable/radio_button_text_colors"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/fragment_details_radio_xl"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/radio_button_states"
+            android:button="@android:color/transparent"
+            android:gravity="center"
+            android:text="XL"
+            android:textColor="@drawable/radio_button_text_colors"
+            android:textSize="16sp" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/fragment_details_textview_quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="24dp"
+        android:text="Qty"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_details_textview_sizes" />
+
+    <RadioGroup
+        android:id="@+id/fragment_details_radio_group_quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toEndOf="@+id/fragment_details_textview_sizes"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_details_radio_group_sizes">
+
+        <RadioButton
+            android:id="@+id/fragment_details_radio_one"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@drawable/radio_button_states"
+            android:button="@android:color/transparent"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="@drawable/radio_button_text_colors"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/fragment_details_radio_two"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/radio_button_states"
+            android:button="@android:color/transparent"
+            android:gravity="center"
+            android:text="2"
+            android:textColor="@drawable/radio_button_text_colors"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/fragment_details_radio_three"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/radio_button_states"
+            android:button="@android:color/transparent"
+            android:gravity="center"
+            android:text="3"
+            android:textColor="@drawable/radio_button_text_colors"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/fragment_details_radio_four"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/radio_button_states"
+            android:button="@android:color/transparent"
+            android:gravity="center"
+            android:text="4"
+            android:textColor="@drawable/radio_button_text_colors"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/fragment_details_radio_five"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/radio_button_states"
+            android:button="@android:color/transparent"
+            android:gravity="center"
+            android:text="5"
+            android:textColor="@drawable/radio_button_text_colors"
+            android:textSize="16sp" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/fragment_details_button_add"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="53dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="@color/black"
+        android:text="ADD TO CART"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_details_radio_group_quantity" />
+
+    <TextView
+        android:id="@+id/fragment_details_textview_reviews"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginRight="45dp"
+        android:fontFamily="@font/playfairdisplay_regular"
+        android:text="Reviews(0)"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_details_imageview_picture" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

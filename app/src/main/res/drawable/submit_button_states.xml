@@ -1,0 +1,6 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/submit_button_state_enabled"   android:state_enabled="true" android:state_pressed="false" />
+    <item android:drawable="@drawable/submit_button_state_disabled" android:state_enabled="false" android:state_pressed="false"  />
+
+</selector>

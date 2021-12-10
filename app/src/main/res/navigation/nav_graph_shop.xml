@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph_shop"
+    app:startDestination="@id/shopFragment">
+
+    <fragment
+        android:id="@+id/shopFragment"
+        android:name="com.example.windowshopper_mvvm.ui.shop.ShopFragment"
+        android:label="ShopFragment" >
+        <action
+            android:id="@+id/action_shopFragment_to_itemDetailsFragment"
+            app:destination="@id/itemDetailsFragment" />
+        <argument
+            android:name="item"
+            app:argType="com.example.windowshopper_mvvm.models.Item"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/itemDetailsFragment"
+        android:name="com.example.windowshopper_mvvm.ui.shop.ItemDetailsFragment"
+        android:label="ItemDetailsFragment" >
+        <action
+            android:id="@+id/action_itemDetailsFragment_to_reviewsFragment"
+            app:destination="@id/reviewsFragment" />
+        <argument
+            android:name="itemId"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/reviewsFragment"
+        android:name="com.example.windowshopper_mvvm.ui.reviews.ReviewsFragment"
+        android:label="ReviewsFragment" >
+        <action
+            android:id="@+id/action_reviewsFragment_to_SubmitReviewsFragment"
+            app:destination="@id/submitReviewFragment" />
+        <argument
+            android:name="itemId"
+            app:argType="string"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/submitReviewFragment"
+        android:name="com.example.windowshopper_mvvm.ui.reviews.SubmitReviewFragment"
+        android:label="SubmitReviewFragment" >
+        <argument
+            android:name="itemId"
+            app:argType="string"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.example.windowshopper_mvvm.ui.cart.CartFragment"
+        android:label="CartFragment">
+    </fragment>
+
+</navigation>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purple">
+
+    <ImageView
+        android:id="@+id/fragment_login_imageview_back"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/ic_back"
+        android:backgroundTint="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/fragment_login_imageview_icon"
+        android:layout_width="155dp"
+        android:layout_height="155dp"
+        android:layout_marginTop="80dp"
+        android:src="@drawable/ic_windowshopper_transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/fragment_login_textview_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/login_textview_email"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_login_edittext_email"
+        app:layout_constraintStart_toStartOf="@+id/fragment_login_edittext_email" />
+
+    <EditText
+        android:id="@+id/fragment_login_edittext_email"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="@color/white"
+        android:hint="@string/login_prompt_email"
+        android:inputType="textWebEmailAddress"
+        android:paddingLeft="25dp"
+        android:textColor="@color/light_grey"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_login_imageview_icon" />
+
+    <TextView
+        android:id="@+id/fragment_login_textview_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/login_textview_password"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_login_edittext_password"
+        app:layout_constraintStart_toStartOf="@+id/fragment_login_edittext_password" />
+
+    <EditText
+        android:id="@+id/fragment_login_edittext_password"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="@color/white"
+        android:hint="@string/login_prompt_password"
+        android:inputType="textPassword"
+        android:paddingLeft="25dp"
+        android:textColor="@color/light_grey"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_login_edittext_email" />
+
+    <Button
+        android:id="@+id/fragment_login_button_sign_in"
+        android:layout_width="125dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="90dp"
+        android:text="@string/login_button_sign_in"
+        android:textColor="@drawable/button_text_states"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:background="@drawable/login_button_states"
+        android:enabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_login_edittext_password" />
+
+    <Button
+        android:id="@+id/fragment_login_button_create_account"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginBottom="15dp"
+        android:background="@android:color/transparent"
+        android:text="@string/login_button_create_account"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purple">
+
+    <ImageView
+        android:id="@+id/fragment_sign_up_imageview_back"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/ic_back"
+        android:tint="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/fragment_sign_up_textview_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/account_create_text_username"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_sign_up_edittext_username"
+        app:layout_constraintStart_toStartOf="@+id/fragment_sign_up_edittext_username" />
+
+    <EditText
+        android:id="@+id/fragment_sign_up_edittext_username"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="@color/white"
+        android:hint="@string/account_create_prompt_username"
+        android:inputType="textWebEmailAddress"
+        android:paddingLeft="25dp"
+        android:textColor="@color/light_grey"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/fragment_sign_up_textview_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/account_create_text_email"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_sign_up_edittext_email"
+        app:layout_constraintStart_toStartOf="@+id/fragment_sign_up_edittext_email" />
+
+    <EditText
+        android:id="@+id/fragment_sign_up_edittext_email"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="65dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="@color/white"
+        android:hint="@string/account_create_prompt_email"
+        android:inputType="textWebEmailAddress"
+        android:paddingLeft="25dp"
+        android:textColor="@color/light_grey"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_sign_up_edittext_username" />
+
+    <TextView
+        android:id="@+id/fragment_sign_up_textview_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/account_create_text_password"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_sign_up_edittext_password"
+        app:layout_constraintStart_toStartOf="@+id/fragment_sign_up_edittext_password" />
+
+    <EditText
+        android:id="@+id/fragment_sign_up_edittext_password"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="@color/white"
+        android:hint="@string/account_create_prompt_password"
+        android:inputType="textPassword"
+        android:paddingLeft="25dp"
+        android:textColor="@color/light_grey"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_sign_up_edittext_email" />
+
+    <TextView
+        android:id="@+id/fragment_sign_up_textview_password_prompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/account_create_text_pw_validation"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/fragment_sign_up_edittext_password"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_sign_up_edittext_password" />
+
+    <TextView
+        android:id="@+id/fragment_sign_up_textview__confirm_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/account_create_text_confirm_password"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_sign_up_edittext_confirm_password"
+        app:layout_constraintStart_toStartOf="@+id/fragment_sign_up_edittext_confirm_password" />
+
+    <EditText
+        android:id="@+id/fragment_sign_up_edittext_confirm_password"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="90dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="@color/white"
+        android:hint="@string/account_create_prompt_confirm_password"
+        android:inputType="textPassword"
+        android:paddingLeft="25dp"
+        android:textColor="@color/light_grey"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_sign_up_edittext_password" />
+
+    <Button
+        android:id="@+id/fragment_sign_up_button_sign_up"
+        android:layout_width="125dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/login_button_states"
+        android:text="@string/account_create_button_sign_up"
+        android:textColor="@drawable/button_text_states"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_sign_up_edittext_confirm_password" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

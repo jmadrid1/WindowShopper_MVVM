@@ -1,0 +1,68 @@
+<resources>
+    <string name="app_name">WindowShopper</string>
+
+    //Account UI - Fragments
+    <string name="account_created_snackbar_success">Successfully Created Account</string>
+    <string name="account_created_snackbar_error">Failed To Create Account</string>
+
+    <string name="account_create_text_username">Username</string>
+    <string name="account_create_prompt_username">Enter Username</string>
+    <string name="account_create_text_email">Email Address</string>
+    <string name="account_create_prompt_email">Enter Email Address</string>
+    <string name="account_create_text_password">Password</string>
+    <string name="account_create_prompt_password">Enter Password</string>
+    <string name="account_create_text_pw_validation">Password must be 6 characters long</string>
+    <string name="account_create_text_confirm_password">Confirm Password</string>
+    <string name="account_create_prompt_confirm_password">Please Re-Enter Password</string>
+
+    <string name="account_create_button_sign_up">Sign Up</string>
+
+    <string name="account_button_update">Update Account</string>
+    <string name="account_button_sign_out">Sign Out</string>
+
+    <string name="account_edit_text_email">Email Address</string>
+    <string name="account_edit_prompt_email">Enter Email Address</string>
+    <string name="account_edit_text_username">Username</string>
+    <string name="account_edit_prompt_username">Enter Username</string>
+
+    <string name="account_edit_toast_update_success">Email Was Updated Successfully</string>
+    <string name="account_edit_toast_update_fail">Failed To Update Email. Try Again.</string>
+
+    <string name="account_edit_button_save">Save Changes</string>
+
+    //Shop UI - Fragments
+    <string name="shop_textview_size">Size</string>
+    <string name="shop_textview_quantity">Qty</string>
+    <string name="shop_radiobutton_small">S</string>
+    <string name="shop_radiobutton_medium">M</string>
+    <string name="shop_radiobutton_large">L</string>
+    <string name="shop_radiobutton_xlarge">XL</string>
+
+    //Cart UI - Fragments
+    <string name="cart_textview_header">Cart</string>
+    <string name="cart_textview_items">Items: </string>
+    <string name="cart_textview_amount">Amount: </string>
+    <string name="cart_textview_no_items">You have no items in your shopping cart</string>
+    <string name="cart_button_payment">Make Payment</string>
+
+    //Login UI - Fragments
+    <string name="login_toast_welcome">Welcome back!</string>
+    <string name="login_toast_error">Incorrect Information Entered</string>
+
+    <string name="login_textview_email">Email Address</string>
+    <string name="login_prompt_email">Enter Email Address</string>
+    <string name="login_textview_password">Password</string>
+    <string name="login_prompt_password">Enter Password</string>
+
+    <string name="login_button_sign_in">Sign In</string>
+    <string name="login_button_create_account">Create Account</string>
+
+    //Review UI - Fragments
+    <string name="reviews_textview_header">Reviews</string>
+    <string name="reviews_textview_no_reviews">There are no reviews available for this item</string>
+
+    <string name="reviews_submit_textview_header">Submit A Review</string>
+    <string name="reviews_submit_edittext_prompt">What did you think of this product?</string>
+    <string name="reviews_submit_button_submit">Submit</string>
+
+</resources>
