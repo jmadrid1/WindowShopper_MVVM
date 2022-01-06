@@ -2,7 +2,6 @@ package com.example.windowshopper_mvvm.ui.cart
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -41,10 +40,7 @@ class CartFragment : Fragment(R.layout.fragment_cart) {
         super.onStart()
         val currentUser = auth.currentUser
         if(currentUser == null){
-            val intent = Intent(context, LoginActivity::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-            startActivity(intent)
+            navigateToLogin()
         }else{
             viewLifecycleOwner.lifecycleScope.launch {
                 viewModel.getCartItems(auth.currentUser.uid)
@@ -149,6 +145,13 @@ class CartFragment : Fragment(R.layout.fragment_cart) {
 
         cartAdapter.differ.submitList(cartList)
         cartAdapter.notifyDataSetChanged()
+    }
+
+    private fun navigateToLogin(){
+        val intent = Intent(context, LoginActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        startActivity(intent)
     }
 
     private fun showProgressBar(){
