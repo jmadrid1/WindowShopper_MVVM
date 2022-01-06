@@ -1,5 +1,6 @@
 package com.example.windowshopper_mvvm.ui.account
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +15,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.windowshopper_mvvm.R
 import com.example.windowshopper_mvvm.databinding.FragmentSignUpBinding
 import com.example.windowshopper_mvvm.ui.login.LoginViewModel
+import com.example.windowshopper_mvvm.ui.shop.ShopActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -99,7 +101,7 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
         viewModel.wasNewUserCreated.observe(viewLifecycleOwner) { it ->
             if(it == true){
                 Toast.makeText(context, R.string.account_created_snackbar_success, Toast.LENGTH_SHORT).show()
-                onBackButtonPress()
+                navigateToShop()
             }else{
                 Toast.makeText(context,  R.string.account_created_snackbar_error, Toast.LENGTH_SHORT).show()
             }
@@ -112,6 +114,13 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
         val password: String = binding.fragmentSignUpEdittextPassword.text.toString()
 
         viewModel.signUpNewUser(username, email, password)
+    }
+
+    private fun navigateToShop(){
+        val intent = Intent(context, ShopActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        startActivity(intent)
     }
 
 }
