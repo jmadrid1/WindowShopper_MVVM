@@ -1,6 +1,5 @@
 package com.example.windowshopper_mvvm.ui.shop
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
@@ -51,7 +50,6 @@ class ShopAdapter : RecyclerView.Adapter<ShopAdapter.ShopViewHolder>() {
     }
 
     override fun getItemCount(): Int {
-        Log.i("Jovel Adapter", "Size:  ${differ.currentList.size}")
         return differ.currentList.size
     }
 
