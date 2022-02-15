@@ -31,7 +31,7 @@ class ShopViewModel @Inject constructor(private val _firebase: FirebaseShopRepo)
                         _clothesList.postValue(Resource.success(items))
                     }
                 }
-                Status.ERROR -> { _clothesList.postValue(Resource.error("Failed to grab items from Firebase", emptyList())) }
+                Status.ERROR -> { _clothesList.postValue(Resource.error(it.message.toString(), emptyList())) }
             }
         }
     }

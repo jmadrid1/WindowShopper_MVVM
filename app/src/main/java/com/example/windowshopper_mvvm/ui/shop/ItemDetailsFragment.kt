@@ -18,6 +18,7 @@ import com.example.windowshopper_mvvm.databinding.FragmentItemDetailsBinding
 import com.example.windowshopper_mvvm.models.CartItem
 import com.example.windowshopper_mvvm.models.Item
 import com.example.windowshopper_mvvm.ui.cart.CartActivity
+import com.example.windowshopper_mvvm.ui.login.LoginActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -99,8 +100,6 @@ class ItemDetailsFragment : Fragment(R.layout.fragment_item_details) {
     }
 
     private fun addToCart(item: Item){
-        val uid : String = auth.currentUser.uid
-
         val id : Int = item.id
         val title : String = item.title
         val sizeSelectedID : Int = binding.fragmentDetailsRadioGroupSizes.checkedRadioButtonId
@@ -117,9 +116,15 @@ class ItemDetailsFragment : Fragment(R.layout.fragment_item_details) {
 
         val cartItem = CartItem(id, title, size, price, thumbnail, quantity)
 
-        viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.addToCart(cartItem, uid)
-            findNavController().popBackStack()
+        val currentUser = auth.currentUser
+        if(currentUser == null){
+            navigateToLogin()
+        }else{
+            val uid : String = currentUser.uid
+            viewLifecycleOwner.lifecycleScope.launch {
+                viewModel.addToCart(cartItem, uid)
+                findNavController().popBackStack()
+            }
         }
     }
 
@@ -132,6 +137,12 @@ class ItemDetailsFragment : Fragment(R.layout.fragment_item_details) {
     private fun navigateToCart(){
         val intent = Intent(context, CartActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        startActivity(intent)
+    }
+
+    private fun navigateToLogin(){
+        val intent = Intent(context, LoginActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
     }

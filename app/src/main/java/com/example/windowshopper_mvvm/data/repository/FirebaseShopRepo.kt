@@ -1,5 +1,6 @@
 package com.example.windowshopper_mvvm.data.repository
 
+import android.util.Log
 import com.example.windowshopper_mvvm.data.Resource
 import com.example.windowshopper_mvvm.models.CartItem
 import com.example.windowshopper_mvvm.models.Item
@@ -10,6 +11,7 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.channels.sendBlocking
 import kotlinx.coroutines.flow.callbackFlow
+import java.lang.Exception
 import javax.inject.Inject
 
 class FirebaseShopRepo @Inject constructor(
@@ -21,7 +23,6 @@ class FirebaseShopRepo @Inject constructor(
         const val KEY_CART = "cart"
     }
 
-    @ExperimentalCoroutinesApi
     override fun getClothes() = callbackFlow<Resource<List<Item>>> {
         val postListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
@@ -38,6 +39,7 @@ class FirebaseShopRepo @Inject constructor(
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
+                this@callbackFlow.sendBlocking(Resource.error(databaseError.toString(), emptyList()))
             }
         }
         database.addValueEventListener(postListener)
@@ -47,7 +49,6 @@ class FirebaseShopRepo @Inject constructor(
         }
     }
 
-    @ExperimentalCoroutinesApi
     override fun addToCart(cartItem: CartItem, uid: String) {
         database = Firebase.database.reference
         database.child(KEY_USERS)
@@ -55,6 +56,7 @@ class FirebaseShopRepo @Inject constructor(
             .child(KEY_CART)
             .child(cartItem.id.toString())
             .setValue(cartItem)
+
     }
 
 }
