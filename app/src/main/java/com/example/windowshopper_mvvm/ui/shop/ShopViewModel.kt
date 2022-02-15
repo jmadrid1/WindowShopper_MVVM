@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.windowshopper_mvvm.data.repository.FirebaseShopRepo
+import com.example.windowshopper_mvvm.data.repository.FirebaseShopRepoImpl
 import com.example.windowshopper_mvvm.data.Resource
 import com.example.windowshopper_mvvm.data.Status
 import com.example.windowshopper_mvvm.models.CartItem
@@ -16,14 +16,14 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class ShopViewModel @Inject constructor(private val _firebase: FirebaseShopRepo): ViewModel() {
+class ShopViewModel @Inject constructor(private val _firebaseImpl: FirebaseShopRepoImpl): ViewModel() {
 
     private val _clothesList = MutableLiveData<Resource<List<Item>>>()
     val clothesList: LiveData<Resource<List<Item>>> = _clothesList
 
     @ExperimentalCoroutinesApi
     suspend fun getClothes(){
-        _firebase.getClothes().collect {
+        _firebaseImpl.getClothes().collect {
             _clothesList.postValue(Resource.loading(null))
             when(it.status) {
                 Status.SUCCESS -> {
@@ -38,7 +38,7 @@ class ShopViewModel @Inject constructor(private val _firebase: FirebaseShopRepo)
 
     fun addToCart(cartItem: CartItem, uid: String) {
         viewModelScope.launch {
-            _firebase.addToCart(cartItem, uid)
+            _firebaseImpl.addToCart(cartItem, uid)
         }
     }
 
