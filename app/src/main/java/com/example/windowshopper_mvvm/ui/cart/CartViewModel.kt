@@ -4,9 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.windowshopper_mvvm.data.repository.FirebaseCartRepo
 import com.example.windowshopper_mvvm.data.Resource
 import com.example.windowshopper_mvvm.data.Status
+import com.example.windowshopper_mvvm.data.repository.FirebaseCartRepoImpl
 import com.example.windowshopper_mvvm.models.CartItem
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -15,7 +15,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class CartViewModel @Inject constructor(private val _firebase: FirebaseCartRepo): ViewModel() {
+class CartViewModel @Inject constructor(private val _firebase: FirebaseCartRepoImpl): ViewModel() {
 
     private val _cartList = MutableLiveData<Resource<List<CartItem>>>()
     val cartList: LiveData<Resource<List<CartItem>>> = _cartList
