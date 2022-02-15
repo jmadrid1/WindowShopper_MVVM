@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.windowshopper_mvvm.data.repository.FirebaseAccountRepo
+import com.example.windowshopper_mvvm.data.repository.FirebaseAccountRepoImpl
 import com.example.windowshopper_mvvm.data.Resource
 import com.example.windowshopper_mvvm.data.Status
 import com.example.windowshopper_mvvm.models.Account
@@ -18,7 +18,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class AccountViewModel @Inject constructor(private val _firebase: FirebaseAccountRepo): ViewModel() {
+class AccountViewModel @Inject constructor(private val _firebaseImpl: FirebaseAccountRepoImpl): ViewModel() {
 
     private val _username = MutableLiveData<Resource<String>>()
     val username: LiveData<Resource<String>> = _username
@@ -34,7 +34,7 @@ class AccountViewModel @Inject constructor(private val _firebase: FirebaseAccoun
     @ExperimentalCoroutinesApi
     fun getUsersData(uid : String){
         viewModelScope.launch {
-            val user: Unit = _firebase.getUsersData(uid).collect {
+            val user: Unit = _firebaseImpl.getUsersData(uid).collect {
                 when (it.status) {
                     Status.SUCCESS -> {
                         val account: Account = it.data!!
@@ -48,7 +48,7 @@ class AccountViewModel @Inject constructor(private val _firebase: FirebaseAccoun
 
     fun updateEmailAddress(uid: String, email: String){
         viewModelScope.launch {
-            _firebase.updateEmailAddress(uid, email)
+            _firebaseImpl.updateEmailAddress(uid, email)
             _wasEmailUpdated.postValue(true)
         }
     }
