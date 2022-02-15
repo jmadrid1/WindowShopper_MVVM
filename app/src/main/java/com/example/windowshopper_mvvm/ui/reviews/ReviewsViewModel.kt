@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.windowshopper_mvvm.data.repository.FirebaseReviewsRepo
+import com.example.windowshopper_mvvm.data.repository.FirebaseReviewsRepoImpl
 import com.example.windowshopper_mvvm.data.Resource
 import com.example.windowshopper_mvvm.data.Status
 import com.example.windowshopper_mvvm.models.Review
@@ -18,7 +18,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class ReviewsViewModel @Inject constructor(private val _firebase: FirebaseReviewsRepo): ViewModel() {
+class ReviewsViewModel @Inject constructor(private val _firebaseImpl: FirebaseReviewsRepoImpl): ViewModel() {
 
     private val _reviewsList = MutableLiveData<Resource<List<Review>>>()
     val reviewsList: LiveData<Resource<List<Review>>> = _reviewsList
@@ -42,13 +42,13 @@ class ReviewsViewModel @Inject constructor(private val _firebase: FirebaseReview
     @ExperimentalCoroutinesApi
     suspend fun submitReview(itemID: String, review: Review){
         viewModelScope.launch {
-            _firebase.submitReview(itemID, review)
+            _firebaseImpl.submitReview(itemID, review)
         }
     }
 
     @ExperimentalCoroutinesApi
     suspend fun getReviews(itemID: String){
-        _firebase.getReviews(itemID).collect {
+        _firebaseImpl.getReviews(itemID).collect {
             _reviewsList.postValue(Resource.loading(null))
             when(it.status) {
                 Status.SUCCESS -> {
