@@ -4,7 +4,7 @@ import android.util.Patterns
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.windowshopper_mvvm.data.repository.FirebaseAccountRepo
+import com.example.windowshopper_mvvm.data.repository.FirebaseAccountRepoImpl
 import com.example.windowshopper_mvvm.models.Account
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -16,7 +16,7 @@ import kotlinx.coroutines.flow.combine
 import javax.inject.Inject
 
 @HiltViewModel
-class LoginViewModel @Inject constructor(private val _firebase: FirebaseAccountRepo): ViewModel() {
+class LoginViewModel @Inject constructor(private val _firebaseImpl: FirebaseAccountRepoImpl): ViewModel() {
 
     private lateinit var auth: FirebaseAuth
 
@@ -79,7 +79,7 @@ class LoginViewModel @Inject constructor(private val _firebase: FirebaseAccountR
                 val user = auth.currentUser
                 val account = Account(username, email, password)
 
-                _firebase.insertUserAccount(account, user.uid)
+                _firebaseImpl.insertUserAccount(account, user.uid)
 
                 _wasNewUserCreated.postValue(true)
             } else {
